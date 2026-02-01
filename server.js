@@ -69,6 +69,24 @@ app.get("/tickets", (req, res) => {
   });
 });
 
+app.get("/tickets/:id", (req, res) => {
+  const { id } = req.params;
+
+  const sql = "SELECT * FROM tickets WHERE id = ?";
+
+  db.query(sql, [id], (err, results) => {
+    if (err) {
+      return res.status(500).json({ error: "Failed to fetch ticket" });
+    }
+
+    if (results.length === 0) {
+      return res.status(404).json({ error: "Ticket not found" });
+    }
+
+    res.json(results[0]);
+  });
+});
+
 app.delete("/tickets/:id", (req, res) => {
   const ticketId = req.params.id;
 

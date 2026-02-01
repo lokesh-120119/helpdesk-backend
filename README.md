@@ -115,3 +115,17 @@ Returns a list of all tickets in JSON format.
 
 ### Testing
 Tested using Postman by calling GET /tickets API.
+
+## Module 8: Get Single Ticket API
+
+### Endpoint
+GET /tickets/:id
+
+### Description
+This API is used to fetch a single ticket by its ID from the database.
+
+### Example
+GET http://localhost:3000/tickets/2
+
+### Response
+Returns ticket details if found.
