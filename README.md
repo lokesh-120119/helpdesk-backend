@@ -99,3 +99,19 @@ PUT /tickets/:id
 
 ### Testing
 Tested using Postman by updating ticket status with valid and invalid ticket IDs.
+
+## Module 7 – Get All Tickets
+
+This module retrieves all helpdesk tickets from the database.
+
+### API Endpoint
+GET /tickets
+
+### Success Response
+Returns a list of all tickets in JSON format.
+
+### Error Response
+- 500: Failed to fetch tickets
+
+### Testing
+Tested using Postman by calling GET /tickets API.
