@@ -25,6 +25,29 @@ app.get("/tickets", (req, res) => {
   });
 });
 
+app.put("/tickets/:id", (req, res) => {
+  const { id } = req.params;
+  const { status } = req.body;
+
+  if (!status) {
+    return res.status(400).json({ error: "Status is required" });
+  }
+
+  const sql = "UPDATE tickets SET status = ? WHERE id = ?";
+
+  db.query(sql, [status, id], (err, result) => {
+    if (err) {
+      return res.status(500).json({ error: "Update failed" });
+    }
+
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ error: "Ticket not found" });
+    }
+
+    res.json({ message: "Ticket status updated successfully" });
+  });
+});
+
 app.post("/tickets", (req, res) => {
   const { user_id, title, description } = req.body;
 

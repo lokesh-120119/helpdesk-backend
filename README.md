@@ -39,3 +39,11 @@ and view existing tickets using REST APIs.
 
 ## Note
 node_modules folder is ignored using .gitignore and is not pushed to GitHub.
+
+## Module 4 – Update Ticket Status
+
+- PUT /tickets/:id
+- Update ticket status (open / closed)
+- Request body validation
+- MySQL UPDATE query implemented
+- Tested using Postman
