@@ -71,3 +71,31 @@ DELETE http://localhost:3000/tickets/1
 
 ### Status
 Module 5 completed and tested successfully using Postman.
+
+## Module 6 – Update Ticket Status
+
+This module allows updating the status of an existing helpdesk ticket.
+
+### API Endpoint
+PUT /tickets/:id
+
+### Request Params
+- id: Ticket ID
+
+### Request Body (JSON)
+{
+  "status": "closed"
+}
+
+### Success Response
+{
+  "message": "Ticket status updated successfully"
+}
+
+### Error Responses
+- 400: Status is required
+- 404: Ticket not found
+- 500: Update failed
+
+### Testing
+Tested using Postman by updating ticket status with valid and invalid ticket IDs.
