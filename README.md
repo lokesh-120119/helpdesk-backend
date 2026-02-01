@@ -47,3 +47,27 @@ node_modules folder is ignored using .gitignore and is not pushed to GitHub.
 - Request body validation
 - MySQL UPDATE query implemented
 - Tested using Postman
+
+## Module 5 – Delete Ticket
+
+### Description
+This module handles deleting a ticket from the helpdesk system using ticket ID.
+
+### API Endpoint
+DELETE /tickets/:id
+
+### Functionality
+- Deletes a ticket based on the provided ID
+- Returns success message if deleted
+- Returns error if ticket not found
+
+### Example Request
+DELETE http://localhost:3000/tickets/1
+
+### Example Response
+{
+  "message": "Ticket deleted successfully"
+}
+
+### Status
+Module 5 completed and tested successfully using Postman.
